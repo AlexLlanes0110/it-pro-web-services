@@ -1,0 +1,41 @@
+---
+import { itproContent } from "../../content/itpro.es";
+import Badge from "../ui/Badge.astro";
+import Container from "../ui/Container.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { problem } = itproContent;
+---
+
+<section id="problemas" class="bg-[#020617] py-20 sm:py-24 lg:py-28">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <div>
+        <SectionHeading
+          eyebrow={problem.eyebrow}
+          title={problem.title}
+          description={problem.description}
+        />
+        <div class="mt-6">
+          <Badge variant="success">Operación real, no soporte genérico</Badge>
+        </div>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-2">
+        {
+          problem.items.map((item) => (
+            <div class="rounded-md border border-white/10 bg-white/[0.03] p-4">
+              <div class="flex gap-3">
+                <span
+                  class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-lime-300"
+                  aria-hidden="true"
+                />
+                <p class="text-sm leading-6 text-slate-300">{item}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>
