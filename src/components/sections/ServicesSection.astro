@@ -1,0 +1,42 @@
+---
+import { itproContent } from "../../content/itpro.es";
+import Container from "../ui/Container.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import ServiceCard from "../ui/ServiceCard.astro";
+
+const { services } = itproContent;
+
+const serviceIcons = [
+  "/images/graphics/automation-icon.svg",
+  "/images/graphics/managed-platforms-icon.svg",
+  "/images/graphics/continuous-ops-icon.svg",
+  "/images/graphics/infrastructure-icon.svg",
+];
+---
+
+<section
+  id="servicios"
+  class="border-y border-white/10 bg-[#0f172a] py-20 sm:py-24 lg:py-28"
+>
+  <Container>
+    <SectionHeading
+      eyebrow={services.eyebrow}
+      title={services.title}
+      description={services.description}
+      align="center"
+    />
+
+    <div class="mt-12 grid gap-4 md:grid-cols-2">
+      {
+        services.items.map((service, index) => (
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            iconSrc={serviceIcons[index]}
+            iconAlt=""
+          />
+        ))
+      }
+    </div>
+  </Container>
+</section>

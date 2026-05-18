@@ -17,6 +17,7 @@ export const itproContent = {
       "Seguimiento desordenado por WhatsApp, Excel o documentos sueltos.",
       "Procesos manuales que consumen tiempo y generan errores.",
       "Falta de visibilidad sobre pedidos, clientes, tareas o responsables.",
+      "Falta de documentación interna para sostener la operación.",
       "Herramientas desconectadas entre sí.",
       "Infraestructura tecnológica sin mantenimiento constante.",
       "Necesidad de soporte tecnológico sin contratar un área interna completa.",
@@ -59,27 +60,27 @@ export const itproContent = {
       "No vendemos soluciones genéricas. Analizamos cómo trabaja tu empresa y proponemos una solución ajustada a tus necesidades, presupuesto y etapa de crecimiento.",
     steps: [
       {
-        title: "Entendemos tu operación",
+        title: "Entendemos cómo opera la empresa",
         description:
           "Revisamos cómo trabaja tu empresa, qué herramientas usa y qué problema necesita resolver.",
       },
       {
-        title: "Detectamos oportunidades",
+        title: "Detectamos problemas y oportunidades",
         description:
           "Identificamos procesos manuales, puntos de desorden, falta de visibilidad o riesgos tecnológicos.",
       },
       {
-        title: "Proponemos una solución",
+        title: "Proponemos una solución ajustada",
         description:
           "Definimos si conviene una implementación puntual, un servicio mensual o una combinación de ambos.",
       },
       {
-        title: "Implementamos o adaptamos",
+        title: "Implementamos o adaptamos herramientas",
         description:
           "Configuramos herramientas, automatizaciones, documentación o infraestructura según el alcance definido.",
       },
       {
-        title: "Acompañamos y mejoramos",
+        title: "Acompañamos al equipo y damos seguimiento",
         description:
           "Damos seguimiento, soporte, recomendaciones y mejora continua cuando el servicio lo requiere.",
       },

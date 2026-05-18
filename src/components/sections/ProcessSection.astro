@@ -1,0 +1,32 @@
+---
+import { itproContent } from "../../content/itpro.es";
+import Container from "../ui/Container.astro";
+import ProcessStep from "../ui/ProcessStep.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { process } = itproContent;
+---
+
+<section id="como-trabajamos" class="bg-[#020617] py-20 sm:py-24 lg:py-28">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <SectionHeading
+        eyebrow={process.eyebrow}
+        title={process.title}
+        description={process.description}
+      />
+
+      <div class="grid gap-4">
+        {
+          process.steps.map((step, index) => (
+            <ProcessStep
+              step={index + 1}
+              title={step.title}
+              description={step.description}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>
