@@ -88,12 +88,20 @@ export const itproContent = {
   },
 
   caseStudy: {
-    eyebrow: "Caso real",
-    title: "Un caso real en una empresa del sector textil.",
+    eyebrow: "Caso fundador",
+    title: "Uniformes Pre: tecnología aplicada a la operación diaria.",
     description:
-      "ITPro ya acompaña a una empresa del sector textil en la administración de su infraestructura tecnológica y en la adaptación de una plataforma operativa para mejorar el seguimiento de clientes, pedidos, documentación y etapas internas de producción.",
+      "Uniformes Pre es el caso fundador de ITPro: una empresa del sector textil donde la tecnología se aplica directamente a la operación diaria. ITPro acompaña su infraestructura tecnológica y la adaptación de una plataforma operativa para mejorar el seguimiento de clientes, pedidos, documentación y etapas internas de trabajo.",
+    image: "/images/cases/uniformes-pre-case.webp",
+    imageAlt: "Caso fundador de ITPro con Uniformes Pre",
+    highlights: [
+      "Acompañamiento en infraestructura tecnológica.",
+      "Adaptación de una plataforma operativa gestionada.",
+      "Seguimiento de clientes, pedidos, documentación y flujo interno.",
+      "Administración, soporte remoto y mejora continua.",
+    ],
     note:
-      "Por privacidad, el caso se presenta de forma general hasta contar con autorización para publicar nombre, logo o detalles específicos.",
+      "La información pública se mantiene enfocada en el alcance general del acompañamiento, sin precios, métricas, credenciales ni datos operativos sensibles.",
   },
 
   technology: {
@@ -105,8 +113,8 @@ export const itproContent = {
     principles: [
       "Tecnología entendible para el negocio.",
       "Soluciones ajustadas al proceso real.",
-      "Documentación y seguimiento.",
-      "Mejora continua sin promesas irreales.",
+      "Automatización útil, sin complejidad innecesaria.",
+      "Documentación, acompañamiento y mejora continua.",
     ],
   },
 
@@ -117,7 +125,15 @@ export const itproContent = {
     role: "Fundador y responsable técnico de ITPro",
     description:
       "ITPro nace de la experiencia combinando software, infraestructura, automatización y operación tecnológica. La misión es ayudar a empresas reales a trabajar con más orden, control y continuidad.",
-    image: "",
+    image: "/images/founder/alejandro-aguilar.webp",
+    imageAlt: "Alejandro Aguilar, fundador de ITPro",
+    expertise: [
+      "Software",
+      "Redes",
+      "Infraestructura",
+      "Automatización",
+      "Operación tecnológica",
+    ],
   },
 
   contact: {
