@@ -1,0 +1,15 @@
+---
+type Element = "div" | "section" | "article" | "main" | "header" | "footer";
+
+type Props = {
+  as?: Element;
+  class?: string;
+};
+
+const { as = "div", class: className = "" } = Astro.props;
+const Tag = as;
+---
+
+<Tag class:list={["mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8", className]}>
+  <slot />
+</Tag>
