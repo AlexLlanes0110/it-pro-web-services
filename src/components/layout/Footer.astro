@@ -1,0 +1,92 @@
+---
+import { contactConfig } from "../../config/contact";
+import { navigationItems } from "../../config/navigation";
+import { siteConfig } from "../../config/site";
+import { buildMailTo, normalizeExternalUrl } from "../../utils/links";
+import { buildWhatsAppUrl } from "../../utils/whatsapp";
+
+const currentYear = new Date().getFullYear();
+const whatsappUrl = buildWhatsAppUrl(contactConfig.whatsapp);
+
+const contactLinks = [
+  {
+    label: contactConfig.whatsapp.label,
+    href: whatsappUrl,
+    external: true,
+  },
+  {
+    label: "Correo",
+    href: buildMailTo(contactConfig.email),
+    external: false,
+  },
+  {
+    label: "LinkedIn",
+    href: normalizeExternalUrl(contactConfig.linkedin),
+    external: true,
+  },
+  {
+    label: "GitHub",
+    href: normalizeExternalUrl(contactConfig.github),
+    external: true,
+  },
+];
+---
+
+<footer class="border-t border-white/10 bg-[#020617]">
+  <div class="mx-auto max-w-6xl px-5 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div>
+        <p class="text-lg font-semibold text-slate-50">{siteConfig.name}</p>
+        <p class="mt-1 text-sm text-slate-400">{siteConfig.fullName}</p>
+        <p class="mt-4 max-w-md text-sm leading-6 text-slate-300">
+          {siteConfig.tagline}
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-slate-200">
+          Navegación
+        </p>
+        <nav class="mt-4 grid gap-2" aria-label="Navegación de pie de página">
+          {
+            navigationItems.map((item) => (
+              <a
+                href={item.href}
+                class="text-sm text-slate-400 transition hover:text-sky-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-slate-200">
+          Contacto
+        </p>
+        <div class="mt-4 grid gap-2">
+          {
+            contactLinks.map((link) => (
+              <a
+                href={link.href}
+                class="text-sm text-slate-400 transition hover:text-sky-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>© {currentYear} {siteConfig.name}. Todos los derechos reservados.</p>
+      <p>Tecnología clara para operaciones reales.</p>
+    </div>
+  </div>
+</footer>
