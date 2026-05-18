@@ -1,101 +1,112 @@
-# Technical Context — ITPro Web
+# Technical Context — ITPro Web Services
 
-## Stack
+## Current technical decision
 
-The decided stack is:
+The V1 website will be built with:
 
-- Astro
-- Tailwind CSS
-- TypeScript
-- GitHub
-- GitHub Actions
-- AWS S3
-- AWS CloudFront
-- Cloudflare DNS
-
-Docker is not part of V1.
-
-## Current server setup
-
-The repository is cloned on the server at:
-
-/opt/apps/itpro-web
-
-The server has:
-
-- Git installed
-- Node installed through nvm
-- npm installed
-- SSH access to GitHub using a deploy key
-- Deploy key with write access enabled because development is being done from the server
-
-## Node
-
-Node was installed using nvm.
-
-Avoid installing Node with apt unless explicitly required.
-
-## Project structure goal
-
-Desired structure:
-
-itpro-web/
-├── .ai/
-├── .github/workflows/
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── layout/
-│   │   ├── sections/
-│   │   └── ui/
-│   ├── config/
-│   ├── content/
-│   ├── layouts/
-│   ├── pages/
-│   ├── styles/
-│   └── utils/
-├── astro.config.mjs
-├── tailwind.config.mjs
-├── package.json
-├── tsconfig.json
-├── .gitignore
-└── README.md
-
-## Technical rules
-
-- Keep V1 static.
-- Prefer Astro components.
-- Prefer content/config files for text and navigation.
-- Avoid unnecessary client-side JavaScript.
-- Avoid unnecessary dependencies.
-- Use Tailwind CSS for styling.
-- Keep SEO metadata centralized when possible.
-- Keep WhatsApp links centralized.
-- Keep navigation anchors centralized.
-- Do not add backend functionality in V1.
-- Do not add database, auth, CMS, tickets, payments, or chatbot.
-- Do not add Docker for now.
-
-## Build
-
-Use:
-
-npm run build
-
-Expected output:
-
-dist/
-
-## Local development
-
-Use:
-
-npm run dev -- --host 0.0.0.0
-
-Do not expose the development server publicly unless explicitly required.
+- Astro.
+- Tailwind CSS.
+- TypeScript.
+- Static output.
 
 ## Deployment target
 
-Production should be static hosting:
+The planned deployment target is:
 
-Astro build output → S3 bucket → CloudFront distribution → Cloudflare DNS
+- Static build.
+- AWS S3 for static hosting.
+- AWS CloudFront as CDN.
+- Cloudflare for DNS and domain management.
+- HTTPS.
+- Basic redirects if needed.
+- Basic performance optimization.
+
+## Local development
+
+The local development workflow should use standard Node.js and npm commands.
+
+Common commands:
+
+    npm install
+    npm run dev
+    npm run build
+    npm run preview
+
+## Docker
+
+Docker is not part of V1.
+
+Do not propose, create, configure, or document Docker-related files unless the user explicitly requests it in the future.
+
+Do not create Docker-related files such as:
+
+- Dockerfile
+- docker-compose.yml
+- .dockerignore
+- Container scripts
+- Docker deployment instructions
+
+## Expected project structure
+
+Expected source structure:
+
+    src/
+    ├── components/
+    │   ├── layout/
+    │   ├── sections/
+    │   └── ui/
+    ├── config/
+    ├── content/
+    ├── layouts/
+    ├── pages/
+    ├── styles/
+    └── utils/
+
+## Content strategy
+
+Business and website content should be centralized before building visual sections.
+
+Recommended files:
+
+    src/config/site.ts
+    src/config/navigation.ts
+    src/config/contact.ts
+    src/content/itpro.es.ts
+
+Avoid hardcoding repeated business content directly inside components.
+
+## V1 technical scope
+
+V1 includes:
+
+- Static one-page landing page.
+- Internal navigation.
+- Responsive layout.
+- Floating WhatsApp button.
+- Basic SEO metadata.
+- Basic Open Graph metadata.
+- Static assets.
+
+V1 does not include:
+
+- Backend API.
+- Database.
+- CMS.
+- Login.
+- Client portal.
+- Ticket system.
+- Payment system.
+- Chatbot.
+- Advanced form handling.
+- Multi-language implementation.
+- Docker.
+
+## Technical principles
+
+- Keep the project simple.
+- Prefer static generation.
+- Prefer reusable content and config files.
+- Avoid unnecessary dependencies.
+- Keep components readable.
+- Avoid over-engineering.
+- Run npm run build after meaningful implementation changes.

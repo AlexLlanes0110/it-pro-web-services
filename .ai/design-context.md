@@ -1,97 +1,131 @@
-# Design Context — ITPro Web
+# Design Context — ITPro Web Services
 
-## UX goal
+## Design objective
 
-The landing page should make ITPro feel like a serious technology partner for PyMEs.
+The website should feel modern, technical, clean, professional, trustworthy, and clear.
 
-The site should be simple, direct, responsive, and optimized for conversion through WhatsApp.
+It should communicate that ITPro understands technology and business operations.
 
-## Header
+## UX objective
 
-Fixed header with internal anchor navigation:
+A visitor should understand in a few seconds:
 
-- ITPro
-- Inicio
-- Servicios
-- Cómo trabajamos
-- Caso real
-- Fundador
-- Contacto
-- Future ES/EN switch
+- What ITPro is.
+- What problem ITPro solves.
+- Who ITPro helps.
+- What services ITPro offers.
+- How ITPro works.
+- That there is already a real case.
+- Who is behind the brand.
+- How to contact ITPro.
 
-Each option must point to a section in the same page.
+## Recommended structure
 
-## Floating CTA
+V1 is a one-page landing page with internal navigation.
 
-There must be a floating WhatsApp button:
+Recommended sections:
 
-- Circular
-- Fixed in the lower-right corner
-- Visible on mobile and desktop
-- High contrast
-- Direct WhatsApp link
+1. Hero.
+2. Problem.
+3. Services.
+4. Work process.
+5. Real case.
+6. Technology philosophy.
+7. Founder.
+8. Contact.
+9. Footer.
 
-## Palette
+## Navigation
 
-Primary background:
+Suggested internal navigation:
 
-#020617
+- Inicio.
+- Servicios.
+- Cómo trabajamos.
+- Caso real.
+- Fundador.
+- Contacto.
 
-Cards / surfaces:
+## Visual identity
 
-#0F172A
+Suggested color palette:
 
-Technology cyan:
+- Main dark blue: #020617
+- Secondary dark blue: #0F172A
+- Technology cyan: #0EA5E9
+- Bright blue: #0284C7
+- Operation green: #84CC16
+- Text gray: #CBD5E1
+- White: #F8FAFC
 
-#0EA5E9
+Blue and cyan should be the main visual colors.
 
-Bright blue:
-
-#0284C7
-
-Operation/accent green:
-
-#84CC16
-
-Gray text:
-
-#CBD5E1
-
-White:
-
-#F8FAFC
+Green should be used only as an accent to communicate operation, activity, automation, improvement, and continuity.
 
 ## Visual style
 
-- Dark technology-oriented theme
-- Clean cards
-- Soft borders
-- Subtle gradients
-- Professional but approachable
-- Avoid clutter
-- Avoid stock-photo-heavy design
-- Prefer abstract operational/technology visuals if needed
+The design may use visual elements related to:
 
-## Page sections
+- Networks.
+- Nodes.
+- Automation.
+- Workflows.
+- Software.
+- Operations.
+- Infrastructure.
+- Dashboards.
+- Service cards.
+- Connection lines.
+- Technology iconography.
 
-V1 one-page layout:
+Avoid saturating the page with too many technical logos or tool names.
 
-1. Hero
-2. Problem
-3. Services
-4. Process / How we work
-5. Generic case study
-6. Technology philosophy
-7. Founder
-8. Contact
-9. Footer
+## Tone
 
-## Responsive
+The design should communicate:
 
-Must work well on:
+- Trust.
+- Order.
+- Technical capability.
+- Professional closeness.
+- Modernity.
+- Clarity.
+- Support and continuity.
 
-- Mobile
-- Tablet
-- Desktop
+The design should avoid:
 
-Mobile navigation can be simplified if needed.
+- Excessive coldness.
+- Informality.
+- Unnecessary complexity.
+- Generic corporate appearance.
+- Looking like a repair shop.
+- Looking like a cheap web agency.
+
+## Responsive requirements
+
+The website must work well on:
+
+- Mobile.
+- Tablet.
+- Desktop.
+
+Mobile clarity is a priority because some visitors may arrive from a QR code or WhatsApp.
+
+## Image approach
+
+Final images are not required at this stage.
+
+Use placeholders or empty image fields until the user manually adds:
+
+- Logo.
+- Founder photo.
+- Hero visual.
+- Favicon.
+- Open Graph image.
+- Client-approved assets, if authorized later.
+
+## Design priority for V1
+
+The priority is clarity and trust, not visual complexity.
+
+Avoid building complex animations or heavy interactive sections in V1 unless explicitly requested later.

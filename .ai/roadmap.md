@@ -1,64 +1,85 @@
-# Roadmap — ITPro Web
+# Roadmap — ITPro Web Services
 
-## V1 — Current target
+## Current phase
 
-Spanish one-page landing page.
+Project structure and AI memory preparation.
 
-Must include:
+## V1 — First public landing page
 
-- Fixed header
-- Internal anchor navigation
-- Floating WhatsApp button
-- Hero
-- Problem section
-- Services section
-- How we work section
-- Generic real case
-- Technology philosophy
-- Founder section
-- Contact section
-- Footer
-- Responsive layout
-- Basic SEO
-- Basic Open Graph
-- AWS deploy readiness
+Goal: launch a professional Spanish-first one-page landing page for ITPro.
 
-Out of scope:
+### V1 includes
 
-- Blog
-- CMS
-- Client portal
-- Login
-- Tickets
-- Database
-- Payments
-- Complex forms
-- Chatbot
-- Multi-language active support
-- Docker
+- One-page landing page.
+- Spanish content.
+- Internal navigation.
+- Header.
+- Floating WhatsApp CTA.
+- Hero section.
+- Problem section.
+- Services section.
+- Work process section.
+- Generic real case section.
+- Technology philosophy section.
+- Founder section.
+- Contact section.
+- Footer.
+- Basic SEO.
+- Basic Open Graph metadata.
+- Responsive design.
+- Static deployment.
 
-## V1.5
+### V1 excludes
 
-Add multi-language support:
+- Blog.
+- CMS.
+- Login.
+- Client portal.
+- Ticket system.
+- Database.
+- Backend API.
+- Payment system.
+- Complex forms.
+- Chatbot.
+- Admin dashboard.
+- Multi-language implementation.
+- Docker.
 
-- `/` for Spanish
-- `/en/` for English
-- ES/EN language switch
-- hreflang
-- Open Graph per language
-- Simple analytics
-- Named case study with logo only if authorization exists
+## V1.5 — Possible improvements after launch
 
-## V2
+Only after V1 is stable.
 
-Convert the codebase into a reusable one-page landing page template.
+Possible additions:
 
-Goals:
+- English version.
+- Improved animations.
+- More polished illustrations.
+- Better Open Graph image.
+- Analytics.
+- Additional case study content if authorized.
+- Improved SEO content.
+- Performance tuning.
 
-- ITPro theme
-- Demo grayscale theme
-- Generic images
-- Decoupled content
-- Theme system
-- Possible separate repo or branch
-- Template to sell one-page landing pages to other clients
+## V2 — Business growth
+
+Possible future expansion:
+
+- Separate services page.
+- Separate case studies page.
+- Blog or resources section.
+- Landing page template for future clients.
+- More formal lead capture flow.
+- Client support workflow.
+- Integration with internal tools if needed.
+
+## Current next steps
+
+1. Finalize AI context files.
+2. Create centralized config files.
+3. Create centralized content file.
+4. Build base layout.
+5. Build reusable UI components.
+6. Build landing sections.
+7. Test responsive behavior.
+8. Run production build.
+9. Prepare deployment workflow.
