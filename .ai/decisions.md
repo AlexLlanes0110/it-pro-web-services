@@ -1,105 +1,125 @@
-# Decisions — ITPro Web
+# Decisions — ITPro Web Services
 
-## 001 — Use Astro
+This file records important project decisions.
 
-Decision:
+## Decision 001 — Website type
 
-Use Astro for the landing page.
-
-Reason:
-
-The site is mostly static, content-driven, and performance-sensitive. Astro is a good fit for fast static websites with component structure.
-
-## 002 — Use Tailwind CSS
-
-Decision:
-
-Use Tailwind CSS for styling.
+The first version of the ITPro website will be a one-page landing page with internal navigation.
 
 Reason:
 
-Tailwind allows fast iteration, consistent design tokens, and easy responsive styling without maintaining large custom CSS files.
+The current goal is to communicate clearly, build trust, and generate WhatsApp contact without overcomplicating the project.
 
-## 003 — No Docker in V1
+## Decision 002 — Language
 
-Decision:
-
-Do not use Docker for V1.
+The first version will be Spanish-first.
 
 Reason:
 
-The project is a static Astro landing page. Docker would add complexity without immediate benefit.
+The initial target audience is SMBs in Yucatán and Quintana Roo.
 
-## 004 — Use AWS S3 + CloudFront
+## Decision 003 — Stack
 
-Decision:
+The project will use:
 
-Deploy static build output to S3 and serve through CloudFront.
-
-Reason:
-
-The site is static and benefits from low-cost, highly available CDN delivery.
-
-## 005 — Use Cloudflare DNS
-
-Decision:
-
-Use Cloudflare for DNS.
+- Astro.
+- Tailwind CSS.
+- TypeScript.
 
 Reason:
 
-Cloudflare provides flexible DNS management and can point cleanly to CloudFront.
+This stack is lightweight, modern, static-friendly, and easy to maintain for a landing page.
 
-## 006 — Use GitHub Actions for deploy
+## Decision 004 — Static deployment
 
-Decision:
+The project will target static deployment.
 
-Use GitHub Actions to build and deploy.
+Planned infrastructure:
 
-Reason:
-
-The expected production flow is automated from GitHub to AWS.
-
-## 007 — Server uses SSH deploy key
-
-Decision:
-
-The server authenticates to GitHub using an SSH deploy key.
+- AWS S3.
+- AWS CloudFront.
+- Cloudflare DNS.
 
 Reason:
 
-A deploy key can be scoped to a single repository, reducing risk compared to broad account tokens.
+The site does not require backend logic in V1.
 
-## 008 — Deploy key has write access
+## Decision 005 — No backend in V1
 
-Decision:
-
-The deploy key has write access.
+V1 will not include backend logic, database, authentication, admin panel, or server-side application features.
 
 Reason:
 
-Alejandro wants to develop and push directly from the server.
+The current goal is a simple, reliable, professional landing page.
 
-Risk:
+## Decision 006 — No Docker in V1
 
-If the server is compromised, the attacker could push to this repository. Keep the private key protected and server access restricted.
-
-## 009 — Spanish first
-
-Decision:
-
-Spanish is the only active language for V1.
+Docker will not be used in V1.
 
 Reason:
 
-The initial target market is Spanish-speaking PyMEs. English support is planned for V1.5.
+The project does not need containerization for the current scope. Keeping the workflow simple reduces maintenance overhead and avoids unnecessary complexity.
 
-## 010 — Generic case study in V1
+## Decision 007 — WhatsApp as main CTA
 
-Decision:
-
-Use a generic case study for the textile sector in V1.
+The main call to action will be WhatsApp.
 
 Reason:
 
-There is a real founding client, but name/logo/data must not be published without formal authorization.
+The commercial flow starts with a direct conversation and initial diagnosis.
+
+## Decision 008 — No public pricing in V1
+
+The website will not show rigid public pricing.
+
+Reason:
+
+ITPro will offer personalized solutions depending on the client's operation, needs, budget, and growth stage.
+
+## Decision 009 — Generic client case until authorization
+
+The first real client case will be presented generically as a textile-sector company until explicit authorization is provided.
+
+Reason:
+
+Client name, logo, screenshots, internal data, and sensitive details must not be published without approval.
+
+## Decision 010 — Content before design implementation
+
+Before building full visual sections, the project should centralize site configuration and content.
+
+Recommended files:
+
+- src/config/site.ts
+- src/config/navigation.ts
+- src/config/contact.ts
+- src/content/itpro.es.ts
+
+Reason:
+
+This keeps business content reusable, easier to edit, and less likely to be duplicated across components.
+
+## Decision 011 — Images will be manual
+
+Final images will not be generated or assumed by AI.
+
+The user will manually add:
+
+- Logo.
+- Founder photo.
+- Hero visuals.
+- Favicon.
+- Open Graph image.
+- Client-approved assets, if authorized later.
+
+Reason:
+
+Images should be intentional, reviewed, and approved manually.
+
+## Decision 012 — Codex usage should be controlled
+
+Codex should be used only for specific, well-scoped implementation tasks.
+
+Reason:
+
+The project should save Codex credits and keep learning value high. Documentation, content, structure, and review can be handled manually before asking Codex to implement.

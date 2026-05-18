@@ -1,45 +1,116 @@
-# ITPro Web — AI Project Memory
+# AI Context — ITPro Web Services
 
-This folder contains the operating context for AI assistants working on this repository.
+This folder contains the project memory for AI assistants and coding agents.
 
-Before making changes, any AI assistant must read these files in this order:
+The main rules are defined in:
 
-1. `.ai/project-context.md`
-2. `.ai/product-context.md`
-3. `.ai/technical-context.md`
-4. `.ai/design-context.md`
-5. `.ai/roadmap.md`
-6. `.ai/decisions.md`
-7. `.ai/working-log.md`
+- ../CODEX.md
+
+Use this folder as structured context, not as a place to duplicate every rule.
 
 ## Purpose
 
-This project is the official website for ITPro — Inteligencia Tecnológica Profesional.
+The `.ai` folder helps keep the project organized by separating:
 
-The goal is to build a professional one-page landing site for a technology services brand focused on software, automation, managed operational platforms, continuous technology operations, and infrastructure as complementary support.
+- Project context.
+- Product and business context.
+- Technical decisions.
+- Design direction.
+- Roadmap.
+- Current working status.
+- Reusable prompts for specific tasks.
 
-ITPro must not be positioned as a computer repair business.
+## Recommended reading order
 
-## Main instruction for AI assistants
+Before modifying the repository, read:
 
-Do not invent business context, credentials, client names, logos, private screenshots, production data, or unauthorized case study details.
+1. ../CODEX.md
+2. .ai/decisions.md
+3. .ai/project-context.md
+4. .ai/product-context.md
+5. .ai/technical-context.md
+6. .ai/design-context.md
+7. .ai/roadmap.md
+8. .ai/working-log.md
 
-When modifying the codebase:
+For specific tasks, also read the relevant prompt inside:
 
-- Prefer simple, maintainable Astro components.
-- Keep content separated from layout when possible.
-- Use Tailwind CSS for styling.
-- Preserve Spanish as the default language.
-- Keep the first version static, fast, and deployable to AWS S3 + CloudFront.
-- Avoid adding unnecessary dependencies.
-- Do not add Docker, CMS, database, login, ticketing, payments, chatbot, or blog unless explicitly requested.
+- .ai/prompts/
 
-## Working style
+## Folder structure
 
-When starting a new task, update `.ai/working-log.md` with:
+.ai/
+├── README.md
+├── project-context.md
+├── product-context.md
+├── technical-context.md
+├── design-context.md
+├── roadmap.md
+├── decisions.md
+├── working-log.md
+└── prompts/
+    ├── codex-system-prompt.md
+    ├── code-review.md
+    ├── ux-review.md
+    └── image-generation.md
 
-- Date
-- What changed
-- Why it changed
-- Next pending step
+## File roles
 
+### project-context.md
+
+General project identity and purpose.
+
+### product-context.md
+
+Business positioning, services, audience, commercial message, and value proposition.
+
+### technical-context.md
+
+Stack, deployment direction, technical scope, and implementation constraints.
+
+### design-context.md
+
+UX direction, visual identity, tone, navigation, and layout priorities.
+
+### roadmap.md
+
+Current phase, V1 scope, future improvements, and longer-term possibilities.
+
+### decisions.md
+
+Official project decisions. If something is decided, it should be recorded here.
+
+### working-log.md
+
+Current working status and latest meaningful changes.
+
+This file should stay clean. Do not accumulate unnecessary logs forever.
+
+### prompts/
+
+Reusable task-specific prompts for Codex, UX review, code review, and visual asset direction.
+
+## Main rule
+
+Keep the project focused on V1:
+
+- Spanish-first.
+- One-page landing page.
+- Static Astro site.
+- Clear WhatsApp conversion.
+- No unnecessary features.
+- No Docker.
+- No backend.
+- No CMS.
+- No login.
+- No ticket system.
+- No database.
+
+## Maintenance rule
+
+When project direction changes:
+
+1. Update CODEX.md if it affects global rules.
+2. Update .ai/decisions.md if it is an official decision.
+3. Update the relevant context file.
+4. Update .ai/working-log.md with the current status only.

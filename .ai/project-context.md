@@ -1,89 +1,70 @@
-# Project Context — ITPro Web
+# Project Context — ITPro Web Services
 
-## Project
+## Project name
 
-Official website for ITPro — Inteligencia Tecnológica Profesional.
+ITPro Web Services
 
-ITPro is a technology services brand for small and medium businesses.
+## Brand
 
-The website is a Spanish one-page landing page for commercial presentation, QR usage on business cards, professional credibility, lead generation, and WhatsApp conversion.
+ITPro, also known as Inteligencia Tecnológica Profesional.
 
-## Main positioning
+## Project purpose
 
-ITPro is not a computer repair shop.
+Create the official website for ITPro.
 
-ITPro must be positioned as a technology partner focused on:
+The first version of the website will be a professional landing page that explains what ITPro does, who it helps, what services it offers, how it works, and how potential clients can contact ITPro.
 
-- Software
-- Automation
-- Managed operational platforms
-- Continuous technology operations
-- Infrastructure as complementary support
+## Main business idea
 
-## Main message
+ITPro helps small and medium-sized businesses operate better through technology.
 
-Software y automatización para empresas que quieren operar mejor.
+ITPro is not positioned as a generic computer repair business.
 
-## Subtitle
+ITPro is positioned as a technology partner focused on:
 
-En ITPro ayudamos a PyMEs a ordenar procesos, implementar herramientas tecnológicas y mantener su operación funcionando mediante acompañamiento continuo.
+- Software.
+- Automation.
+- Managed operational platforms.
+- Continuous technology operations.
+- Specialized infrastructure support.
 
-## Website goals
+## Primary audience
 
-The V1 website must support:
+Small and medium-sized businesses in Yucatán and Quintana Roo.
 
-- Commercial presentation
-- Physical business card QR destination
-- Professional credibility
-- New client contact
-- Bridge between ITPro and Alejandro Aguilar as founder
-- WhatsApp conversion
+The target audience includes business owners, administrators, operations managers, and teams that need to improve internal processes without hiring a complete internal IT department.
 
-## V1 scope
+## Main website objective
 
-Included:
+The website must help visitors understand quickly:
 
-- Fixed header
-- Internal anchor navigation
-- Floating WhatsApp button
-- Hero
-- Problem section
-- Services section
-- How we work section
-- Generic real case section
-- Technology philosophy section
-- Founder section
-- Contact section
-- Footer
-- Responsive layout
-- Basic SEO
-- Basic Open Graph
-- AWS deploy readiness
+- What ITPro is.
+- What problems ITPro solves.
+- Who ITPro helps.
+- What services ITPro offers.
+- How ITPro works.
+- That ITPro already has real operational experience.
+- Who is behind the company.
+- How to contact ITPro through WhatsApp.
 
-Not included:
+## Current version
 
-- Blog
-- CMS
-- Client portal
-- Login
-- Tickets
-- Database
-- Payments
-- Complex forms
-- Chatbot
-- Active multi-language support
-- Docker
+V1.
 
-## Repository
+## V1 website type
 
-GitHub repository:
+One-page landing page with internal navigation.
 
-git@github.com:AlexLlanes0110/it-pro-web-services.git
+## V1 commercial goal
 
-## Deployment architecture
+Encourage visitors to contact ITPro through WhatsApp for an initial conversation or diagnosis.
 
-Expected production flow:
+## V1 should not become
 
-GitHub → GitHub Actions → Astro build → AWS S3 → CloudFront → Cloudflare DNS → End user
-
-Docker is intentionally out of scope for now.
+- A full corporate website.
+- A client portal.
+- A blog.
+- A ticket system.
+- A SaaS application.
+- A complex web platform.
+- A personal CV site only.

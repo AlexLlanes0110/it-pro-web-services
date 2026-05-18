@@ -1,51 +1,55 @@
-# Working Log — ITPro Web
+# Working Log — ITPro Web Services
 
-This file tracks project progress so future AI sessions can continue without losing context.
+This file tracks meaningful progress in the repository.
 
-## 2026-05-15
+## 2026-05-17 — AI memory and project structure preparation
 
-### Completed
+### Changed files
 
-- Confirmed Git is installed on the server.
-- Installed Node and npm through nvm.
-- Configured SSH access from the server to GitHub.
-- Created an ED25519 SSH key for the server.
-- Added the server public key as a GitHub deploy key.
-- Confirmed SSH authentication with GitHub.
-- Cloned repository into `/opt/apps/itpro-web`.
-- Initialized Astro project.
-- Installed project dependencies.
-- Installed Tailwind CSS.
-- Confirmed `npm run build` works.
-- Configured Git identity:
-  - Name: Alejandro Aguilar
-  - Email: alexx983llanes@gmail.com
-- Pushed changes to GitHub from the server.
+Created or prepared:
 
-### Current status
+- CODEX.md
+- .ai/README.md
+- .ai/project-context.md
+- .ai/product-context.md
+- .ai/technical-context.md
+- .ai/design-context.md
+- .ai/roadmap.md
+- .ai/decisions.md
+- .ai/working-log.md
 
-The project is ready for structured V1 development.
+### What changed
 
-### Next recommended steps
+The repository now has a clear AI memory structure for future work with coding assistants.
 
-1. Create the intended source folder structure.
-2. Add content files:
-   - `src/config/site.ts`
-   - `src/config/navigation.ts`
-   - `src/content/itpro.es.ts`
-3. Build base layout:
-   - `src/layouts/MainLayout.astro`
-4. Build UI primitives:
-   - Container
-   - Button
-   - SectionHeading
-   - Badge
-5. Build landing sections.
-6. Validate `npm run build`.
-7. Commit and push.
+The documentation defines:
 
-### Notes
+- Project identity.
+- V1 scope.
+- Business positioning.
+- Technical stack.
+- Design direction.
+- Roadmap.
+- Decisions.
+- Rules for Codex and other AI assistants.
 
-The project should stay static for V1.
+### Why it changed
 
-Do not add Docker, backend, database, CMS, login, tickets, payments, chatbot, or blog unless explicitly requested.
+The goal is to avoid confusion, scope creep, repeated decisions, and unnecessary Codex usage.
+
+The project must move in this order:
+
+1. Context.
+2. Architecture.
+3. UX/UI.
+4. Development.
+5. Deployment.
+
+### Pending next step
+
+Create centralized configuration and content files:
+
+- src/config/site.ts
+- src/config/navigation.ts
+- src/config/contact.ts
+- src/content/itpro.es.ts
