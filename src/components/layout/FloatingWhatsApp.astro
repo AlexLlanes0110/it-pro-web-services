@@ -1,0 +1,22 @@
+---
+import { contactConfig } from "../../config/contact";
+import { buildWhatsAppUrl } from "../../utils/whatsapp";
+
+const whatsappUrl = buildWhatsAppUrl(contactConfig.whatsapp);
+---
+
+<a
+  href={whatsappUrl}
+  class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-md border border-lime-300/30 bg-lime-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-xl shadow-slate-950/30 transition hover:bg-lime-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-300"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={contactConfig.whatsapp.label}
+>
+  <span
+    class="grid h-6 w-6 place-items-center rounded bg-slate-950/10 text-xs font-bold"
+    aria-hidden="true"
+  >
+    WA
+  </span>
+  <span>{contactConfig.whatsapp.label}</span>
+</a>
