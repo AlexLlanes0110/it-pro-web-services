@@ -13,7 +13,9 @@ export function buildSeo({
   image = siteConfig.ogImage,
   path = "/",
 }: SeoOptions = {}) {
-  const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name;
+  const pageTitle = title
+    ? `${title} | ${siteConfig.name}`
+    : `${siteConfig.name} | ${siteConfig.tagline}`;
   const canonicalUrl = new URL(path, siteConfig.url).toString();
   const imageUrl = new URL(image, siteConfig.url).toString();
 
