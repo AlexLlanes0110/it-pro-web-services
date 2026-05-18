@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+
+import { siteConfig } from "../config/site";
+import { buildSeo } from "../utils/seo";
+
+type Props = {
+  title?: string;
+  description?: string;
+  image?: string;
+  path?: string;
+  noindex?: boolean;
+};
+
+const {
+  title,
+  description,
+  image,
+  path = Astro.url.pathname,
+  noindex = false,
+} = Astro.props;
+
+const seo = buildSeo({ title, description, image, path });
+---
+
+<!doctype html>
+<html lang={seo.language}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta name="author" content={siteConfig.author.name} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    <link rel="canonical" href={seo.canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.fullName} />
+    <meta property="og:locale" content={seo.locale} />
+    <meta property="og:url" content={seo.canonicalUrl} />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:image" content={seo.imageUrl} />
+    <meta property="og:image:alt" content={siteConfig.fullName} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content={seo.imageUrl} />
+    <meta name="theme-color" content="#020617" />
+  </head>
+  <body class="min-h-screen bg-[#020617] text-slate-50 antialiased">
+    <slot />
+  </body>
+</html>
