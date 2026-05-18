@@ -1,17 +1,32 @@
 ---
-
+import FloatingWhatsApp from "../components/layout/FloatingWhatsApp.astro";
+import Footer from "../components/layout/Footer.astro";
+import Header from "../components/layout/Header.astro";
+import CaseStudySection from "../components/sections/CaseStudySection.astro";
+import ContactSection from "../components/sections/ContactSection.astro";
+import FounderSection from "../components/sections/FounderSection.astro";
+import HeroSection from "../components/sections/HeroSection.astro";
+import ProblemSection from "../components/sections/ProblemSection.astro";
+import ProcessSection from "../components/sections/ProcessSection.astro";
+import ServicesSection from "../components/sections/ServicesSection.astro";
+import TechPhilosophySection from "../components/sections/TechPhilosophySection.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <ProblemSection />
+    <ServicesSection />
+    <ProcessSection />
+    <CaseStudySection />
+    <TechPhilosophySection />
+    <FounderSection />
+    <ContactSection />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</MainLayout>
