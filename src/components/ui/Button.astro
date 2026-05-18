@@ -1,0 +1,57 @@
+---
+type Variant = "primary" | "secondary" | "ghost";
+type Size = "sm" | "md" | "lg";
+
+type Props = {
+  href?: string;
+  variant?: Variant;
+  size?: Size;
+  target?: string;
+  rel?: string;
+  type?: "button" | "submit" | "reset";
+  class?: string;
+};
+
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  target,
+  rel,
+  type = "button",
+  class: className = "",
+} = Astro.props;
+
+const baseClasses =
+  "inline-flex items-center justify-center rounded-md font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-60";
+
+const variantClasses: Record<Variant, string> = {
+  primary:
+    "bg-sky-400 text-slate-950 shadow-sm shadow-sky-950/20 hover:bg-sky-300 focus-visible:outline-sky-300",
+  secondary:
+    "border border-white/10 bg-white/5 text-slate-100 hover:border-sky-300/40 hover:bg-white/10 focus-visible:outline-sky-400",
+  ghost:
+    "text-slate-200 hover:bg-white/5 hover:text-white focus-visible:outline-sky-400",
+};
+
+const sizeClasses: Record<Size, string> = {
+  sm: "min-h-9 px-3 py-2 text-sm",
+  md: "min-h-11 px-4 py-2.5 text-sm",
+  lg: "min-h-12 px-5 py-3 text-base",
+};
+
+const classes = [baseClasses, variantClasses[variant], sizeClasses[size], className];
+const safeRel = target === "_blank" ? rel ?? "noopener noreferrer" : rel;
+---
+
+{
+  href ? (
+    <a href={href} target={target} rel={safeRel} class:list={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class:list={classes}>
+      <slot />
+    </button>
+  )
+}
