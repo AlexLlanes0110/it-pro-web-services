@@ -1,0 +1,51 @@
+---
+import { contactConfig } from "../../config/contact";
+import { itproContent } from "../../content/itpro.es";
+import { buildWhatsAppUrl } from "../../utils/whatsapp";
+import Badge from "../ui/Badge.astro";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+
+const { hero } = itproContent;
+const whatsappUrl = buildWhatsAppUrl(contactConfig.whatsapp);
+const heroImage = "/images/graphics/itpro-hero-visual.webp";
+---
+
+<section id="inicio" class="relative isolate overflow-hidden bg-[#020617]">
+  <div class="absolute inset-0 -z-20" aria-hidden="true">
+    <img
+      src={heroImage}
+      alt=""
+      class="h-full w-full object-cover opacity-30"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="absolute inset-0 -z-10 bg-[#020617]/85" aria-hidden="true"></div>
+
+  <Container class="relative py-24 sm:py-28 lg:py-32">
+    <div class="max-w-3xl">
+      <Badge variant="accent">{hero.eyebrow}</Badge>
+
+      <h1
+        class="mt-6 text-4xl font-semibold leading-tight text-slate-50 sm:text-5xl lg:text-6xl"
+      >
+        {hero.title}
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+        {hero.description}
+      </p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <Button href={whatsappUrl} target="_blank" size="lg">
+          {hero.primaryCta}
+        </Button>
+        <Button href="#servicios" variant="secondary" size="lg">
+          {hero.secondaryCta}
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>
