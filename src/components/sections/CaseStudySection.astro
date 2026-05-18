@@ -1,0 +1,54 @@
+---
+import { itproContent } from "../../content/itpro.es";
+import Badge from "../ui/Badge.astro";
+import Container from "../ui/Container.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { caseStudy } = itproContent;
+---
+
+<section
+  id="caso-real"
+  class="border-y border-white/10 bg-[#0f172a] py-20 sm:py-24 lg:py-28"
+>
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <div>
+        <SectionHeading
+          eyebrow={caseStudy.eyebrow}
+          title={caseStudy.title}
+          description={caseStudy.description}
+        />
+
+        <div class="mt-6">
+          <Badge variant="success">Cliente fundador de ITPro</Badge>
+        </div>
+
+        <ul class="mt-8 grid gap-3">
+          {
+            caseStudy.highlights.map((item) => (
+              <li class="flex gap-3 text-sm leading-6 text-slate-300">
+                <span
+                  class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-300"
+                  aria-hidden="true"
+                />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <p class="mt-6 text-sm leading-6 text-slate-500">{caseStudy.note}</p>
+      </div>
+
+      <div class="overflow-hidden rounded-md border border-white/10 bg-white/[0.03]">
+        <img
+          src={caseStudy.image}
+          alt={caseStudy.imageAlt}
+          class="aspect-[4/3] h-full w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </Container>
+</section>

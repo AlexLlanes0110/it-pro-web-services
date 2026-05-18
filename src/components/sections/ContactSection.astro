@@ -1,0 +1,44 @@
+---
+import { contactConfig } from "../../config/contact";
+import { itproContent } from "../../content/itpro.es";
+import { buildWhatsAppUrl } from "../../utils/whatsapp";
+import Badge from "../ui/Badge.astro";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { contact } = itproContent;
+const whatsappUrl = buildWhatsAppUrl(contactConfig.whatsapp);
+---
+
+<section id="contacto" class="bg-[#020617] py-20 sm:py-24 lg:py-28">
+  <Container>
+    <div class="rounded-md border border-sky-300/20 bg-sky-400/10 p-6 sm:p-8 lg:p-10">
+      <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <Badge variant="accent">{contact.eyebrow}</Badge>
+          <SectionHeading
+            title={contact.title}
+            description={contact.description}
+            class="mt-5"
+          />
+          <p class="mt-5 text-sm leading-6 text-slate-400">
+            {contact.secondaryText}
+          </p>
+        </div>
+
+        <div class="grid gap-3 sm:min-w-64">
+          <Button href={whatsappUrl} target="_blank" size="lg">
+            {contact.primaryCta}
+          </Button>
+          <a
+            href={`mailto:${contactConfig.email}`}
+            class="text-center text-sm text-slate-300 transition hover:text-sky-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
+          >
+            {contactConfig.email}
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

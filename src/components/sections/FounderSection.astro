@@ -1,0 +1,73 @@
+---
+import { contactConfig } from "../../config/contact";
+import { itproContent } from "../../content/itpro.es";
+import Badge from "../ui/Badge.astro";
+import Button from "../ui/Button.astro";
+import Container from "../ui/Container.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { founder } = itproContent;
+
+const founderLinks = [
+  {
+    label: "LinkedIn",
+    href: contactConfig.linkedin,
+  },
+  {
+    label: "GitHub",
+    href: contactConfig.github,
+  },
+];
+---
+
+<section
+  id="fundador"
+  class="border-y border-white/10 bg-[#0f172a] py-20 sm:py-24 lg:py-28"
+>
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+      <div class="overflow-hidden rounded-md border border-white/10 bg-white/[0.03]">
+        <img
+          src={founder.image}
+          alt={founder.imageAlt}
+          class="aspect-[4/5] h-full w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      <div>
+        <SectionHeading
+          eyebrow={founder.eyebrow}
+          title={founder.title}
+          description={founder.description}
+        />
+
+        <div class="mt-6">
+          <p class="text-lg font-semibold text-slate-50">{founder.name}</p>
+          <p class="mt-1 text-sm text-slate-400">{founder.role}</p>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          {
+            founder.expertise.map((item) => <Badge variant="default">{item}</Badge>)
+          }
+        </div>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          {
+            founderLinks.map((link) => (
+              <Button
+                href={link.href}
+                target="_blank"
+                variant="secondary"
+                size="md"
+              >
+                {link.label}
+              </Button>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
