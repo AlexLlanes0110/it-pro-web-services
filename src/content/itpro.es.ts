@@ -100,8 +100,8 @@ export const itproContent = {
       "Seguimiento de clientes, pedidos, documentación y flujo interno.",
       "Administración, soporte remoto y mejora continua.",
     ],
-    note:
-      "La información pública se mantiene enfocada en el alcance general del acompañamiento, sin precios, métricas, credenciales ni datos operativos sensibles.",
+      // Nota interna: no publicar precios, métricas, credenciales,
+      // capturas privadas, configuraciones sensibles ni datos operativos internos.
   },
 
   technology: {
