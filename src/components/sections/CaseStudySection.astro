@@ -38,14 +38,13 @@ const { caseStudy } = itproContent;
           }
         </ul>
 
-        <p class="mt-6 text-sm leading-6 text-slate-500">{caseStudy.note}</p>
       </div>
 
-      <div class="overflow-hidden rounded-md border border-white/10 bg-white/[0.03]">
+      <div class="overflow-hidden rounded-md border border-white/[0.02] bg-white/[0.015] p-6">
         <img
           src={caseStudy.image}
           alt={caseStudy.imageAlt}
-          class="aspect-[4/3] h-full w-full object-cover"
+          class="aspect-[4/3] h-full w-full object-contain"
           loading="lazy"
         />
       </div>
